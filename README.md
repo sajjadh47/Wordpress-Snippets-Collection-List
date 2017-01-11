@@ -116,7 +116,8 @@ function woo_product_categories_dropdown( $atts ) {
 		var product_cat_dropdown = document.getElementById("dropdown_product_cat");
 		function onProductCatChange() {
 			if ( product_cat_dropdown.options[product_cat_dropdown.selectedIndex].value !=='' ) {
-				location.href = "<?php echo home_url(); ?>/?product_cat="+product_cat_dropdown.options[product_cat_dropdown.selectedIndex].value;
+				location.href = "<?php echo home_url(); ?>
+				/?product_cat="+product_cat_dropdown.options[product_cat_dropdown.selectedIndex].value;
 			}
 		}
 		product_cat_dropdown.onchange = onProductCatChange;
@@ -147,7 +148,8 @@ function woo_product_categories_dropdown( $atts ) {
 <?php if($order->shipping_address_2 != ""){ echo '<br>' . $order->shipping_address_2;}?>
  
 //Code For Shipping Country
-<?php $countries = new WC_Countries; $shipping_country = $order->shipping_country; echo ( $shipping_country && isset( $countries->countries[ $shipping_country ] ) ) ? $countries->countries[ $shipping_country ] : $shipping_country; ?>
+<?php $countries = new WC_Countries; $shipping_country = $order->shipping_country;
+echo ( $shipping_country && isset( $countries->countries[ $shipping_country ] ) ) ? $countries->countries[ $shipping_country ] : $shipping_country; ?>
  
 //Code For Billing First and Last Name
 <?php echo $order->billing_first_name . " " . $order->billing_last_name; ?>
