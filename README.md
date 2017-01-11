@@ -16,7 +16,10 @@ add_filter('comment_form_default_fields','remove_comment_fields'); // Job done u
 ```php
 ## Changes Login LOGO Image
 function custom_login_logo() {
-	echo '<style type="text/css"> h1 a { background: url('.get_bloginfo('template_directory').' your logo image url here) 50% 50% no-repeat !important; }</style>';
+	echo '<style type="text/css"> 
+			h1 a { background: url('.get_bloginfo('template_directory') . ' your logo image url here) 
+				50% 50% no-repeat !important; }
+	</style>';
 }
 add_action('login_head', 'custom_login_logo');
 
@@ -45,5 +48,12 @@ function php_text($text) {
  }
  return $text;
 }
+
+```
+## Empty Your WordPress Trash
+
+```php
+
+define( 'EMPTY_TRASH_DAYS', 10 ); // 10 days
 
 ```
