@@ -129,7 +129,7 @@ function woo_product_categories_dropdown( $atts ) {
 	
 }
 ```
-## Woocommerce Email Info Echo Codes For Email Templating
+## 8. Woocommerce Email Info Echo Codes For Email Templating
 
 ```php
 //Code For Order ID
@@ -168,5 +168,18 @@ $countries->countries[ $billing_country ] : $billing_country; ?>
  
 //Code For Order Items/Products
 <?php do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email ); ?>
+
+```
+## 8. Add Custom Currency Symbol In Woocommerce Shop
+
+```php
+
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+function change_existing_currency_symbol( $currency_symbol, $currency ) {
+  switch( $currency ) {
+    case 'AUD': $currency_symbol = 'AUD$'; break;
+  }
+  return $currency_symbol;
+}
 
 ```
