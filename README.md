@@ -50,10 +50,29 @@ function php_text($text) {
 }
 
 ```
-## Empty Your WordPress Trash
+## 5. Empty Your WordPress Trash Using Code
 
 ```php
 
 define( 'EMPTY_TRASH_DAYS', 10 ); // 10 days
+
+```
+## 6. Login With Username or Email Address
+
+```php
+function login_with_email_address($username) {
+        $user = get_user_by('email',$username);
+        if(!empty($user->user_login))
+                $username = $user->user_login;
+        return $username;
+}
+add_action('wp_authenticate','login_with_email_address');
+function change_username_wps_text($text){
+       if(in_array($GLOBALS['pagenow'], array('wp-login.php'))){
+         if ($text == 'Username'){$text = 'Username / Email';}
+            }
+                return $text;
+         }
+add_filter( 'gettext', 'change_username_wps_text' );
 
 ```
