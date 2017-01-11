@@ -149,7 +149,8 @@ function woo_product_categories_dropdown( $atts ) {
  
 //Code For Shipping Country
 <?php $countries = new WC_Countries; $shipping_country = $order->shipping_country;
-echo ( $shipping_country && isset( $countries->countries[ $shipping_country ] ) ) ? $countries->countries[ $shipping_country ] : $shipping_country; ?>
+echo ( $shipping_country && isset( $countries->countries[ $shipping_country ] ) ) ? 
+$countries->countries[ $shipping_country ] : $shipping_country; ?>
  
 //Code For Billing First and Last Name
 <?php echo $order->billing_first_name . " " . $order->billing_last_name; ?>
@@ -161,7 +162,8 @@ echo ( $shipping_country && isset( $countries->countries[ $shipping_country ] ) 
 <?php if($order->billing_address_2 != ""){ echo '<br>' . $order->billing_address_2;}?>
  
 //Code For Billing Country
-<?php $countries = new WC_Countries; $billing_country = $order->billing_country; echo ( $billing_country && isset( $countries->countries[ $billing_country ] ) ) ? $countries->countries[ $billing_country ] : $billing_country; ?>
+<?php $countries = new WC_Countries; $billing_country = $order->billing_country; 
+echo ( $billing_country && isset( $countries->countries[ $billing_country ] ) ) ? $countries->countries[ $billing_country ] : $billing_country; ?>
  
 //Code For Order Items/Products
 <?php do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email ); ?>
