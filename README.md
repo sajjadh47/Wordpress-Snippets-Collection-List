@@ -128,3 +128,40 @@ function woo_product_categories_dropdown( $atts ) {
 	
 }
 ```
+## Woocommerce Email Info Echo Codes For Email Templating
+
+```php
+//Code For Order ID
+<?php echo $order->id; ?>
+ 
+//Code For Order Date
+<?php echo $order->order_date; ?>
+ 
+//Code For Shipping First and Last Name
+<?php echo $order->shipping_first_name . " " . $order->shipping_last_name; ?>
+ 
+//Code For Shipping address
+<?php echo $order->shipping_address_1; ?>
+ 
+//Code For Shipping Apartment Number
+<?php if($order->shipping_address_2 != ""){ echo '<br>' . $order->shipping_address_2;}?>
+ 
+//Code For Shipping Country
+<?php $countries = new WC_Countries; $shipping_country = $order->shipping_country; echo ( $shipping_country && isset( $countries->countries[ $shipping_country ] ) ) ? $countries->countries[ $shipping_country ] : $shipping_country; ?>
+ 
+//Code For Billing First and Last Name
+<?php echo $order->billing_first_name . " " . $order->billing_last_name; ?>
+ 
+//Code For Billing address
+<?php echo $order->billing_address_1; ?>
+ 
+//Code For Billing Apartment Number
+<?php if($order->billing_address_2 != ""){ echo '<br>' . $order->billing_address_2;}?>
+ 
+//Code For Billing Country
+<?php $countries = new WC_Countries; $billing_country = $order->billing_country; echo ( $billing_country && isset( $countries->countries[ $billing_country ] ) ) ? $countries->countries[ $billing_country ] : $billing_country; ?>
+ 
+//Code For Order Items/Products
+<?php do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email ); ?>
+
+```
