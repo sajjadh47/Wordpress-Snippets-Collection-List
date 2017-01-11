@@ -1,4 +1,7 @@
 # Wordpress Snippets Collection List
+
+You Can Put Those Codes Into Your Theme's Function.php File
+
 Wordpress Code Snippets Collection List for WP Theming And Plugin Development
 
 ## 1. Remove URL Field From Comments
