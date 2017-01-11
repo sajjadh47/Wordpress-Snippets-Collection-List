@@ -163,7 +163,8 @@ $countries->countries[ $shipping_country ] : $shipping_country; ?>
  
 //Code For Billing Country
 <?php $countries = new WC_Countries; $billing_country = $order->billing_country; 
-echo ( $billing_country && isset( $countries->countries[ $billing_country ] ) ) ? $countries->countries[ $billing_country ] : $billing_country; ?>
+echo ( $billing_country && isset( $countries->countries[ $billing_country ] ) ) ? 
+$countries->countries[ $billing_country ] : $billing_country; ?>
  
 //Code For Order Items/Products
 <?php do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email ); ?>
